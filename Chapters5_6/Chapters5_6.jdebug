@@ -17,12 +17,15 @@ void OnProjectLoad (void) {
   Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("JTAG");
   Project.SetTIFSpeed ("50 MHz");
-  Project.AddSvdFile ("C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\ide\plugins\com.atollic.truestudio.tsp.stm32_1.0.0.20190212-0734\tsp\sfr\STM32F7x7.svd");
-  Project.SetOSPlugin("FreeRTOSPlugin_CM7");
+  // Project.AddSvdFile ("C:\Program Files (x86)\Atollic\TrueSTUDIO for STM32 9.3.0\ide\plugins\com.atollic.truestudio.tsp.stm32_1.0.0.20190212-0734\tsp\sfr\STM32F7x7.svd");
+  Project.AddSvdFile ("$(InstallDir)/Config/CPU/Cortex-M7F.svd");
+  Project.AddSvdFile ("$(InstallDir)/Config/Peripherals/STM32F767.svd");
+  Project.AddSvdFile ("C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.productdb.debug_2.0.200.202201061234/resources/cmsis/STMicroelectronics_CMSIS_SVD/STM32F767.svd");
   //
   // User settings
   //
   File.Open ("C:/projects/packtBookRTOS/freeRTOS_Nucleo767/Debug/freeRTOS_Nucleo767.elf");
+  Project.SetOSPlugin ("FreeRTOSPlugin");
 }
 
 /*********************************************************************
