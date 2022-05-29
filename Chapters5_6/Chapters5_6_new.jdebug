@@ -31,11 +31,12 @@ void OnProjectLoad (void) {
   Project.AddSvdFile ("$(InstallDir)/Config/CPU/Cortex-M7F.svd");
   Project.AddSvdFile ("$(InstallDir)/Config/Peripherals/STM32F767.svd");
   Project.AddSvdFile ("C:/ST/STM32CubeIDE_1.9.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.productdb.debug_2.0.200.202201061234/resources/cmsis/STMicroelectronics_CMSIS_SVD/STM32F767.svd");
+  Project.SetOSPlugin ("FreeRTOSPlugin_CM7");
+
   //
   // User settings
   //
   File.Open ("$(ProjectDir)/Debug/Chapter5_main.elf");
-  Project.SetOSPlugin ("FreeRTOSPlugin");
 }
 
 /*********************************************************************
